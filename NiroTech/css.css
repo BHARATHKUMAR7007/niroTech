@@ -577,3 +577,23 @@ main {
 .social-icons .icon:hover {
   color: #ff9800; /* orange on hover */
 }
+.clients-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.clients-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clients-list li {
+  font-size: 1.2rem;
+  color: rgb(58, 58, 58);
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
