@@ -362,6 +362,35 @@ body{
   }
   
 }
+
+/*------------download---------*/
+.info-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0077cc;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
 /*-----------------products--------------*/
 .product-inventory {
   display: flex;
