@@ -328,9 +328,15 @@ body{
   opacity: 0.6;
 }
 
-.about-info {
-  flex: 2 1 500px;
-  text-align: left;
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .section-tittle h3 {
@@ -626,3 +632,4 @@ main {
   border-bottom: 1px solid #ccc;
   text-align: left;
 }
+
