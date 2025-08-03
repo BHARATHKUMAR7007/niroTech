@@ -73,7 +73,7 @@
   <!------services start----->
   <section id="Service">
     <h1 style="color: rgb(0, 158, 250); text-align: center; margin-top: 80px;">service</h1>
-    <h3 style=" color: rgb(58, 58, 58);font-size: 1.7rem; padding: 3px; padding: 20px;  max-width:100%; text-align: justify;">Nirotech Construction Works is a reliable and quality-driven construction company committed to delivering excellence in residential,commercial and industrial projects. With a strong foundation in engineering,modern techniques and client-focused service, we turn ideas into lasting structures.</h3>
+    <h3 class="animate-on-scroll" style=" color: rgb(58, 58, 58);font-size: 1.7rem; padding: 3px; padding: 20px;  max-width:100%; text-align: justify;">Nirotech Construction Works is a reliable and quality-driven construction company committed to delivering excellence in residential,commercial and industrial projects. With a strong foundation in engineering,modern techniques and client-focused service, we turn ideas into lasting structures.</h3>
     </section>
       <section id="services" class="services container">
     <h2>Our Services</h2>
@@ -85,7 +85,7 @@
     </div>
   </section>
   <h1 style="color: rgb(0, 157, 255); text-align: center; ">CLIENT LIST</h1> 
-  <section class="clients-list">
+  <section class="clients-list animate-on-scroll">
   <ul>
     <li>KEC International Pvt Ltd – ₹202.2 Lakhs</li>
     <li>NCC Pvt Ltd – ₹156.7 Lakhs</li>
@@ -118,7 +118,7 @@
         <h3>About Us</h3>
         <h2>Niro Tech</h2>
       </div>
-      <p class="about-text">
+      <p class="about-text animate-on-scroll">
         Niro Tech Construction Works is a trusted name in the construction industry, delivering high-quality and reliable building solutions. With a strong focus on innovation, safety, and client satisfaction, we bring your dreams to life—brick by brick. <br><br>
         From residential homes to commercial spaces, we specialize in end-to-end construction services, ensuring every project is completed with precision, integrity, and professionalism. <br><br>
         Our team of skilled engineers, designers, and technicians work with cutting-edge tools and techniques to offer durable, cost-effective, and sustainable structures that stand the test of time.
@@ -224,6 +224,25 @@
   </div>
   <p>&copy; 2025 Niro Tech Construction Works</p>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
 
+    function handleScroll() {
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (position < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // trigger on page load too
+  });
+</script>
 </body>
 </html>
+
