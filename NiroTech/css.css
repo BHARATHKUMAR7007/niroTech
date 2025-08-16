@@ -309,13 +309,13 @@ body{
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .title { font-size: 5rem; gap: 10px; }
+  .title { font-size: 4rem; gap: 10px; }
 }
 @media (max-width: 768px) {
-  .title { font-size: 5rem; gap: 8px; }
+  .title { font-size: 4rem; gap: 8px; }
 }
 @media (max-width: 480px) {
-  .title { font-size: 5rem; gap: 5px; }
+  .title { font-size: 4rem; gap: 5px; }
 }
 
 /*-----------client list--------*/
@@ -830,6 +830,7 @@ iframe {
 .whatsapp-float img:hover {
   transform: scale(1.1);
 }
+
 
 
 
