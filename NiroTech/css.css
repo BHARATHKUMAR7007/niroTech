@@ -202,30 +202,40 @@ body{
 }
 
 /*-------header------*/
-.content-divider{
+/* Google Fonts (logo-like style) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Orbitron:wght@700&display=swap');
+
+/* Divider */
+.content-divider {
   height: 0.5rem;
   box-shadow: 0px 0px 10px rgb(0, 179, 255);
 }
-.header{
+
+/* Header */
+.header {
   min-height: 100vh;
   background: url('images/logo.avif') center/cover no-repeat fixed;
-  
+  position: relative;
 }
-.banner{
+
+/* Banner Center */
+.banner {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  
-}
-.banner h2{
-  font-size: 3rem;
-  color: rgb(49, 49, 49);
-  text-shadow: 1px 1px rgb(255, 255, 255);
-  
 }
 
+/* Subtitle under title */
+.banner h2 {
+  font-size: 3rem;
+  color: rgb(251, 251, 251);
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  margin-top: 15px;
+}
+
+/* Logo Image */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -237,17 +247,77 @@ body{
   border-radius: 50%;
   height: 250px;
   width: 250px;
-  border: 3px solid black;
+  border: 3px solid rgb(65, 65, 65);
   box-shadow: 0px 0px 15px rgb(68, 68, 68);
   object-fit: cover;
   max-width: 100%;
 }
-.service h3{
+
+/* Service Title */
+.service h3 {
   color: rgb(235, 5, 5);
   text-align: justify;
   font-size: 2rem;
   padding: 3px;
 }
+
+/* === NiroTech Title Animation === */
+/* Title Wrapper */
+.title {
+  font-size: 5rem;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 3px 2px 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;          /* space between Niro and Tech */
+  text-align: center;
+  flex-wrap: nowrap;  /* 🔹 Prevent stacking */
+}
+
+/* Each word */
+.word {
+  opacity: 0;
+  position: relative;
+  display: inline-block;
+  text-transform: capitalize;
+  white-space: nowrap; /* keep full word in one line */
+}
+
+/* Niro (Blue) */
+.blue {
+  color: rgb(4, 133, 255);
+  animation: slideFromLeft 1s forwards;
+}
+
+/* Tech (Green) */
+.green {
+  color: rgba(79, 79, 79, 0.832);
+  animation: slideFromRight 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes slideFromLeft {
+  from { transform: translateX(-150px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideFromRight {
+  from { transform: translateX(150px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .title { font-size: 5rem; gap: 10px; }
+}
+@media (max-width: 768px) {
+  .title { font-size: 5rem; gap: 8px; }
+}
+@media (max-width: 480px) {
+  .title { font-size: 5rem; gap: 5px; }
+}
+
 /*-----------client list--------*/
 .clients-list {
   max-width: 800px;
@@ -760,6 +830,7 @@ iframe {
 .whatsapp-float img:hover {
   transform: scale(1.1);
 }
+
 
 
 
