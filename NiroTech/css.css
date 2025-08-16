@@ -465,16 +465,17 @@ body{
 .download-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #0077cc;
+  background-color:  #db05ef;
   color: white;
   font-size: 1rem;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 15px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .download-btn:hover {
-  background-color: #005fa3;
+  background-color: #db05ef ;
+   box-shadow: 1px 8px 30px rgb(255, 0, 255);
   transform: scale(1.05);
 }
 /*-----------------products--------------*/
@@ -737,6 +738,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
 
 
 
