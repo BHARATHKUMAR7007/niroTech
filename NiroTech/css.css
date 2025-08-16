@@ -286,6 +286,17 @@ body{
   background: url("images/tick-mark.png") no-repeat center;
   background-size: contain;
 }
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* Services Section */
 .services { padding: 40px 0; text-align: center; }
@@ -725,6 +736,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
 
 
 
