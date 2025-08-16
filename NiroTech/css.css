@@ -475,7 +475,7 @@ body{
 }
 
 .download-btn:hover {
-  background-color: #db05ef ;
+   background-color:  #05c5f5;
    box-shadow: 1px 8px 30px rgb(255, 0, 255);
   transform: scale(1.05);
 }
@@ -740,6 +740,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
 
 
 
