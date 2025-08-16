@@ -248,6 +248,45 @@ body{
   font-size: 2rem;
   padding: 3px;
 }
+/*-----------client list--------*/
+.clients-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #f4f9ff;   /* light background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.clients-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clients-list li {
+  font-size: 1.2rem;
+  color: rgb(58, 58, 58);
+  padding: 12px 0 12px 40px;  /* space for tick */
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  position: relative;
+}
+
+/* Add tick image to each list item */
+.clients-list li::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("images/tick-mark.png") no-repeat center;
+  background-size: contain;
+}
+
 /* Services Section */
 .services { padding: 40px 0; text-align: center; }
 .services h2 { font-size: 2rem; color: #0099ff; margin-bottom: 30px; }
@@ -686,6 +725,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
 
 
 
