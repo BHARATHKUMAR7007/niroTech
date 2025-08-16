@@ -283,7 +283,7 @@ body{
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: url("images/tick-mark.png") no-repeat center;
+  
   background-size: contain;
 }
 
@@ -737,6 +737,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
 
 
 
