@@ -243,16 +243,23 @@ body{
   padding: 2rem;
   text-align: center;
   background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .org-chart h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #004080;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.org-container { display: flex; flex-direction: column; gap: 1.5rem; }
+.org-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
 
 .sub-roles {
   display: flex;
@@ -261,19 +268,53 @@ body{
   gap: 1rem;
 }
 
-.roles {
-  background: white;
+.role {
+  background: #fff;
   border: 2px solid #0077cc;
-  border-radius: 12px;
-  padding: 1rem;
-  min-width: 200px;
-  max-width: 240px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  border-radius: 10px;
+  width: 180px;              /* equal width */
+  height: 80px;              /* equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.roles:hover { transform: translateY(-5px); }
-.roles strong { color: #0077cc; }
+.role strong {
+  color: #0077cc;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.role span {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.role:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* Highlight Chairman */
+.chairman {
+  background: #e6f2ff;
+  border: 2px solid #004080;
+  font-weight: bold;
+  width: 200px;
+  height: 90px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .role {
+    width: 150px;
+    height: 70px;
+    font-size: 0.85rem;
+  }
+}
 
 /*-----------------methodology------------*/
 .clients-list {
@@ -393,6 +434,7 @@ body{
     padding: 0 1rem 2rem;
   }
 }
+
 
 
 
