@@ -261,7 +261,7 @@ body{
   gap: 1rem;
 }
 
-.role {
+.roles {
   background: white;
   border: 2px solid #0077cc;
   border-radius: 12px;
@@ -272,8 +272,8 @@ body{
   transition: transform 0.2s;
 }
 
-.role:hover { transform: translateY(-5px); }
-.role strong { color: #0077cc; }
+.roles:hover { transform: translateY(-5px); }
+.roles strong { color: #0077cc; }
 
 /*-----------------methodology------------*/
 .clients-list {
@@ -393,6 +393,7 @@ body{
     padding: 0 1rem 2rem;
   }
 }
+
 
 
 
