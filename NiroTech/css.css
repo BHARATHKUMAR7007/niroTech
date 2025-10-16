@@ -1009,29 +1009,14 @@ iframe {
 
 
 
-/* Divider */
-.content-divider {
-  height: 0.5rem;
-  box-shadow: 0px 0px 10px rgb(0, 179, 255);
-}
-
-/* Header with background slider */
+/* Header with single background image */
 .header {
   min-height: 100vh;
+  background-image: url('images/bg3.jpg'); /* ✅ Only one image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: bgSlide 60s infinite;
   position: relative;
-}
-
-/* Background Image Slider */
-@keyframes bgSlide {
-  0%   { background-image: url('images/logo.avif'); }
-  25%  { background-image: url('images/bg2.jpg'); }
-  50%  { background-image: url('images/bg3.jpg'); }
-  75%  { background-image: url('images/bg4.jpg'); }
-  100% { background-image: url('images/nirotech\ text.jpg'); }
 }
 
 /* Banner content */
@@ -1068,11 +1053,11 @@ iframe {
 }
 
 .word.blue {
-  color: rgb(4, 133, 255);   /* Blue */
+  color: rgb(4, 133, 255);
 }
 
 .word.green {
-  color: rgb(84, 84, 84);   /* Green */
+  color: rgb(84, 84, 84);
 }
 
 .banner h2 {
@@ -1107,9 +1092,6 @@ iframe {
     font-size: 1rem;
   }
 }
-
-
-
 
 
 
