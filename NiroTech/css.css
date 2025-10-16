@@ -95,42 +95,103 @@ body{
 }
 /*------Navbar--------*/
 
+/*------Navbar--------*/
+
 :root {
-  --clr-blue: #00aaff;
+  --clr-blue: #1173d4;
   --clr-white: #ffffff;
   --transition: all 0.3s ease;
 }
-
 #nav-check {
   display: none;
 }
 
-/* Toggle open button */
-.nav-btn svg {
-  fill: var(--clr-blue);
-  position: fixed;
-  top: 20px;
-  left: 20px;
+/* Sticky Banner Header */
+.banner-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--clr-blue);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container (Logo + Title + Button) */
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+}
+
+/* Nav Toggle inside banner (left corner) */
+.nav-toggle {
+  position: absolute;
+  left: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 999;
 }
 
-/* NAVBAR hidden by default */
+/* Logo Style */
+.banner-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-blue);
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(17, 115, 212, 0.4);
+}
+
+/* Company Name */
+.banner-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.banner-title .blue {
+  color: var(--clr-blue);
+}
+
+.banner-title .green {
+  color: #343434;
+}
+
+/* Hide nav checkbox */
+#nav-check {
+  display: none;
+}
+
+/* NAVBAR menu hidden initially */
 .navbar {
   position: fixed;
   background-color: rgba(65, 65, 65, 0.95); /* Less transparent */
   top: 0;
   left: 0;
-  width: 100%;
+  width: 30%;
   height: 100vh;
   transform: translateX(-100%);
   transition: var(--transition);
-  z-index: 998;
+  z-index:2000;
 }
 
 /* Show nav when checked */
+/* When toggle checked – show forward */
 #nav-check:checked ~ .navbar {
-  transform: translateX(0%);
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .navbar-header img {
@@ -179,11 +240,10 @@ body{
 
 .nav-link {
   display: block;
-  color: #ffffff;
+  color: var(--clr-white);
   text-transform: uppercase;
   font-size: 1.2rem;
   padding: 0.75rem 1rem;
-  letter-spacing: 0.5px;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -194,12 +254,127 @@ body{
   border-left: 0.5rem solid white;
 }
 
-@media screen and (min-width: 768px) {
-  .navbar {
-    width: 35%;
-    max-width: 25rem;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .banner-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .banner-title {
+    font-size: 1.6rem;
+  }
+  .navbar{
+    width: 100%;
   }
 }
+
+
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.logo-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-container .blue {
+  color: #007bff;
+}
+
+/* Sidebar menu */
+.sidebar {
+  position: fixed;
+  left: -250px; /* Hidden initially */
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  transition: left 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #007bff;
+}
+
+/* Sidebar open state */
+.sidebar.active {
+  left: 0;
+}
+
+/* Hamburger toggle */
+.menu-toggle {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: transform 0.3s;
+}
+
+.menu-toggle.active {
+  transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-container h1 {
+    font-size: 20px;
+  }
+}
+
+.nav-items li {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
+
+#nav-check:checked ~ .navbar .nav-items li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#nav-check:checked ~ .navbar .nav-items li:nth-child(1) { transition-delay: 0.1s; }
+#nav-check:checked ~ .navbar .nav-items li:nth-child(2) { transition-delay: 0.2s; }
+#nav-check:checked ~ .navbar .nav-items li:nth-child(3) { transition-delay: 0.3s; }
+#nav-check:checked ~ .navbar .nav-items li:nth-child(4) { transition-delay: 0.4s; }
+#nav-check:checked ~ .navbar .nav-items li:nth-child(5) { transition-delay: 0.5s; }
+#nav-check:checked ~ .navbar .nav-items li:nth-child(6) { transition-delay: 0.6s; }
+
 
 /*-------header------*/
 /* Google Fonts (logo-like style) */
@@ -932,6 +1107,7 @@ iframe {
     font-size: 1rem;
   }
 }
+
 
 
 
